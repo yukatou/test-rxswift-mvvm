@@ -49,13 +49,7 @@ class ViewController: UIViewController {
                 self.refreshControl.endRefreshing()
             })
             .disposed(by: disposeBag)
-
-
-        viewModel.loading.asObservable().subscribe(onNext: { a in
-            print("loading: \(a)")
-        }).disposed(by: disposeBag)
     }
-
 
     private func configureTableView() {
         tableView.refreshControl = refreshControl

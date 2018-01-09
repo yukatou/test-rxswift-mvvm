@@ -54,13 +54,14 @@ class ViewModel {
 
         Observable
             .of(
-                refreshRequest.map { _ in true },
-                nextPageRequest.map { _ in true },
+                refreshTrigger.map { _ in true },
+                loadNextPageTrigger.map { _ in true },
                 response.map { _ in false },
                 error.map { _ in false }
             )
             .merge()
             .bind(to: loading)
             .disposed(by: disposeBag)
+
     }
 }
